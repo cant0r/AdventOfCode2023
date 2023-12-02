@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Update="Data/dayOne.txt" CopyToOutputDirectory="Always"/>
+    <None Update="Data/dayTwo.txt" CopyToOutputDirectory="Always"/>
   </ItemGroup>
 
 </Project>
