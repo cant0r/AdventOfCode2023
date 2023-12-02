@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace AdventOfCode.Solutions;
+﻿namespace AdventOfCode.Solutions;
 
 internal static class DayTwo
 {
