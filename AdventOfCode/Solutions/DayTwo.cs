@@ -1,11 +1,13 @@
-﻿namespace AdventOfCode.Solutions;
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace AdventOfCode.Solutions;
 
 internal static class DayTwo
 {
     internal static void Execute()
     {
         PartOne();
-        //PartTwo();
+        PartTwo();
     }
 
     private static void PartOne()
@@ -51,7 +53,34 @@ internal static class DayTwo
     private static void PartTwo()
     {
         var inputData = File.ReadAllLines("Data/dayTwo.txt");
+        var accumulator = 0;
 
-        // Console.WriteLine($"Day 02 :: Part 2 solution => {accumulator}");
+        foreach (var line in inputData)
+        {
+            Dictionary<string, int> maximums = new()
+            {
+                { "red", 1 },
+                { "green", 1 },
+                { "blue", 1 }
+            };
+            var turns = line.Split(":")[1].Replace(";", ",").Split(",");
+
+            foreach (var coloredCubes in turns)
+            {
+                var drawn = coloredCubes.Trim().Split();
+                var max = maximums[drawn[1]];
+                var drawnNumberOfCubes = Convert.ToInt32(drawn[0]);
+                
+                if (drawnNumberOfCubes > max)
+                {
+                    maximums[drawn[1]] = drawnNumberOfCubes;
+                }
+
+            }
+            var product = maximums.Values.Aggregate((int a, int b) => { return a * b; });
+            accumulator += product;
+        }
+
+        Console.WriteLine($"Day 02 :: Part 2 solution => {accumulator}");
     }
 }
