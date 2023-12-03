@@ -1,7 +1,4 @@
-using System.Globalization;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
-using Microsoft.VisualBasic;
 
 namespace AdventOfCode.Solutions;
 
