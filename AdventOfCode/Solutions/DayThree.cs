@@ -139,44 +139,15 @@ internal static class DayThree
         var leftIndex = Math.Max(0, y - 1);
         var rightIndex = Math.Min(inputData[x].Length - 1, y + 1);
 
-        if (inputData[topIndex][leftIndex] == '*')
+        for (int i = topIndex; i <= bottomIndex; i++)
         {
-            return (topIndex, leftIndex);
-        }
-
-        if (inputData[topIndex][rightIndex] == '*')
-        {
-            return (topIndex, rightIndex);
-        }
-
-        if (inputData[topIndex][y] == '*')
-        {
-            return (topIndex, y);
-        }
-
-        if (inputData[bottomIndex][leftIndex] == '*')
-        {
-            return (bottomIndex, leftIndex);
-        }
-
-        if (inputData[bottomIndex][rightIndex] == '*')
-        {
-            return (bottomIndex, rightIndex);
-        }
-
-        if (inputData[bottomIndex][y] == '*')
-        {
-            return (bottomIndex, y);
-        }
-
-        if (inputData[x][leftIndex] == '*')
-        {
-            return (x, leftIndex);
-        }
-
-        if (inputData[x][rightIndex] == '*')
-        {
-            return (x, rightIndex);
+            for (int j = leftIndex; j <= rightIndex; j++)
+            {
+                if (inputData[i][j] == '*')
+                {
+                    return (i, j);
+                }
+            }
         }
 
         return (-1, -1);
