@@ -5,7 +5,6 @@ namespace AdventOfCode.Solutions;
 
 internal static class DayFour
 {
-    private static readonly char[] digits = "0123456789".ToCharArray();
     private static readonly string[] inputData = File.ReadAllLines("Data/dayFour.txt");
 
     internal static void Execute()

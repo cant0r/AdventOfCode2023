@@ -3,4 +3,6 @@
 DayOne.Execute();
 DayTwo.Execute();
 DayThree.Execute();
-DayFour.Execute();
+// DayFour.Execute(); Disabled cause ass solution
+// DayFive.Execute(); Disabled cause ass solution
+DaySix.Execute();
